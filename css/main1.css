@@ -1,7 +1,7 @@
 @font-face {
     font-family: custom;
     /* src: url("/SpaceSimShop/fonts/Metalic.otf"); */
-    src: url("/SpaceSimShop/fonts/Ordin-Bold.otf");
+    src: url("/fonts/Ordin-Bold.otf");
 }
 
 body, html{
