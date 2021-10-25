@@ -1,6 +1,7 @@
 @font-face {
     font-family: custom;
-    src: url("/fonts/krunkerfont.ttf");
+    /* src: url("/SpaceSimShop/fonts/Metalic.otf"); */
+    src: url("/SpaceSimShop/fonts/Ordin-Bold.otf");
 }
 
 body, html{
@@ -12,11 +13,13 @@ body{
 a{
     text-decoration: none;
     pointer-events: none;
+    color:#fff;
 } 
 a:visited{
     text-decoration: none;
     color:#fff;
     pointer-events: none;
+   
 }
 
 ::-webkit-scrollbar{
@@ -29,11 +32,30 @@ a:visited{
 ::-webkit-scrollbar-thumb{
     background-color: rgb(78, 78, 78);
     box-shadow: 0px 10px 10px rgb(56, 56, 56);
+    
+}
+@keyframes scrollbar{
+    0%{ background-color:rgb(117, 117, 117);}
+    50%{background-color:rgb(175, 175, 175);}
+    100%{ background-color:rgb(117, 117, 117);}
+}
+@keyframes rotateo{
+    0%{transform: rotateY(0deg);}
+    50%{transform: rotateY(180deg);}
+    100%{transform: rotateY(359deg);}
+}
+#containtercontain{
+    perspective:200px;
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    left:0;
+    top:0;
 }
 #container{
     display: grid;
     position: absolute;
-    top:0px;
+    top:0;
     left:0;
     bottom:0;
     right:0;
@@ -44,6 +66,10 @@ a:visited{
     "header header header"
     "side main main";
     background-color: rgb(51, 51, 51);
+    transform-style: preserve-3d;
+    /* animation:rotateo 5s infinite; */
+    animation-timing-function: linear;
+    /* transform:rotateY(2deg);     */
 
 }
 #header{
@@ -67,6 +93,7 @@ a:visited{
     margin-top: 20px;
     color: white;
     left: 95px;
+    font-size: 60px;
 }
 #navBar{
     position: absolute;
@@ -112,7 +139,8 @@ a:visited{
 }
 .items:hover{
     background-color: rgb(117, 117, 117);
-    transform:scale(1.01);
+    transform:scale(0.99);
+    animation: scrollbar 1s infinite;
 }
 
 .unlock{
@@ -158,10 +186,55 @@ a:visited{
     right: 10px;
     top:10px;
     /* transform:translate(635px,-100px); */
-    width: 150px;
+    width: 270px;
     height: 150px;
     text-align: center;
     border-radius: 15px;
+    display: grid;
+    grid-template-areas: "1 2 3" " 4 5 6" " 7 8 9";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    place-items: center;
+}
+.mats2{
+    background-color: rgb(56, 56, 56);
+    position: absolute;
+    right: 10px;
+    top:10px;
+    /* transform:translate(635px,-100px); */
+    width: 600px;
+    height: 150px;
+    text-align: center;
+    border-radius: 15px;
+    display: grid;
+    grid-template-areas: "1 2 3" " 4 5 6" " 7 8 9";
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    place-items: center;
+}
+.materials{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin:5px;
+    display: grid;
+    grid-template-areas: "1 2";
+    place-items: center;
+}
+.matIcon{
+    height: 32px;
+    width: 32px;
+    position: relative;
+    /* right: 10px; */
+}
+.matAmnt{
+    z-index: 2;
+    position:relative;
+    right: -2px;
+    text-align: right;
+    justify-self: right;
+    color:rgb(192, 192, 192);
+    /* text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000; */
 }
 
 
@@ -182,7 +255,7 @@ a:visited{
     position: absolute;
     text-align: center;
     margin:10px;
-    font-size: 40px;
+    font-size: 80px;
 }
 .imgPrev{
     /* left: 25px; */
