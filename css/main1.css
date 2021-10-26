@@ -1,7 +1,7 @@
 @font-face {
     font-family: custom;
     /* src: url("/SpaceSimShop/fonts/Metalic.otf"); */
-    src: url("/fonts/Ordin-Bold.otf");
+    src: url("/SpaceSimShop/fonts/Ordin-Bold.otf");
 }
 
 body, html{
@@ -33,6 +33,9 @@ a:visited{
     background-color: rgb(78, 78, 78);
     box-shadow: 0px 10px 10px rgb(56, 56, 56);
     
+}
+div{
+    user-select: none;
 }
 @keyframes scrollbar{
     0%{ background-color:rgb(117, 117, 117);}
@@ -97,7 +100,7 @@ a:visited{
 }
 #navBar{
     position: absolute;
-    right: 100px;
+    right: 50px;
     top: 40px;
 }
 .navLink{
@@ -125,11 +128,12 @@ a:visited{
     overflow-x:hidden;
     /* float: left; */
     margin: 10px;
+    min-width: 530px;
 }
 .items{
     background-color: rgb(100, 100, 100);
-    width: 96%;
-    margin:15px 0px;
+    /* width: 96%; */
+    margin:5px 10px 5px 0px;
     padding: 10px;
     min-height: 150px;
     position: relative;
@@ -159,6 +163,15 @@ a:visited{
     display: grid;
     place-items: center;
 }
+.unlockBtn{
+    background-color: rgb(102, 102, 102);
+    border-radius:15px;
+    padding:10px;
+    pointer-events: all;
+}
+.unlockBtn:hover{
+    background-color: rgb(173, 173, 173);
+}
 #unlock1{
     display: none;
 }
@@ -168,11 +181,14 @@ a:visited{
 .itemName{
     color:rgb(255, 255, 255);
     font-size: 30px;
+    width: calc(100% - 275px);
+    pointer-events:none;
 }
 .cost{
     position:absolute;
-    top:70px;
+    margin-top: 10px;
     text-align:left;
+    pointer-events:none;
 }
 .amount{
     position:absolute;
@@ -225,6 +241,7 @@ a:visited{
     height: 32px;
     width: 32px;
     position: relative;
+    image-rendering: pixelated;
     /* right: 10px; */
 }
 .matAmnt{
@@ -244,6 +261,7 @@ a:visited{
     position:relative;
     background-color: rgb(100, 100, 100);
     /* width: 65%; */
+    min-width: 1000px;
     height: 100%;
     float: right;
     display:grid;
