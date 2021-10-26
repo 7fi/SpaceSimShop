@@ -1,7 +1,7 @@
 @font-face {
     font-family: custom;
     /* src: url("/SpaceSimShop/fonts/Metalic.otf"); */
-    src: url("/SpaceSimShop/fonts/Ordin-Bold.otf");
+    src: url("/fonts/Ordin-Bold.otf");
 }
 
 body, html{
@@ -35,7 +35,7 @@ a:visited{
     
 }
 div{
-    user-select: none;
+    user-select: none;  
 }
 @keyframes scrollbar{
     0%{ background-color:rgb(117, 117, 117);}
